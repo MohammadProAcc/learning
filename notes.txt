@@ -1,0 +1,9 @@
+Programming Language Entities' Types
+* Single
+* Compund
+
+Member Accessing
+e.g. standard library
+std
+  io
+    stdin
