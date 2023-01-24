@@ -1,36 +1,13 @@
 fn main() {
-    // println!("Hello, Welcome to the Guessing Game!");
+    println!("Hello, Welcome to the Guessing Game!");
 
-    // let mut input: String = String::new();
-    // std::io::stdin().read_line(&mut input);
+    let random: u8 = random_number::random!(1..=100);
+    // println!("random number is: {}", random);
 
-    // println!("you entered >> {}", input);
-    // println!("{:?}", Type::Variant_1);
-    let number = 1276;
-    let person_1 = Person {
-        name: String::from("mohammad hossein"),
-        weight: 60,
-        height: 180
-    };
+    let mut input: String = String::new();
+    std::io::stdin().read_line(&mut input);
 
-    // println!( "Hello, the number is {:b}", number);
-    // println!("Hello, i'm mohammad hossein, my weight is {}", person_1.weight);
-    println!("{}", person_1.name);
+    let parsed_input = input.parse::<u8>();
+
+    let result = random.cmp(&parsed_input);
 }
-
-struct Person {
-    name: String,
-    weight: u8,
-    height: u8,
-}
-
-impl std::fmt::Debug for Person {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}'s characteristics: \nweight: {}\nheight: {}", self.name, self.weight, self.height)
-    }
-}
-
-// enum Type {
-//     Variant_1,
-//     Variant_2
-// }
