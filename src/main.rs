@@ -1,59 +1,36 @@
 fn main() {
-    println!("Hello, world!");
-    // let number: u8 = 0;
-    let input: String = String::new();
-    std::io::stdin().read_line(input);
+    // println!("Hello, Welcome to the Guessing Game!");
+
+    // let mut input: String = String::new();
+    // std::io::stdin().read_line(&mut input);
+
+    // println!("you entered >> {}", input);
+    // println!("{:?}", Type::Variant_1);
+    let number = 1276;
+    let person_1 = Person {
+        name: String::from("mohammad hossein"),
+        weight: 60,
+        height: 180
+    };
+
+    // println!( "Hello, the number is {:b}", number);
+    // println!("Hello, i'm mohammad hossein, my weight is {}", person_1.weight);
+    println!("{}", person_1.name);
 }
 
-// pub mod std {
-//     pub mod io {
-//        pub fn stdin() {
-//              ...
-//         }
-//     }
-// }
-
-// Compound Data-Types
-// Structure
 struct Person {
-    weight: u16,
-    height: f64,
-    eye_color: String
+    name: String,
+    weight: u8,
+    height: u8,
 }
 
-impl Person {
-    fn new() -> Person {
-       return Person {
-            weight: 0,
-            height: 0,
-            eye_color: ?
-       }
+impl std::fmt::Debug for Person {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}'s characteristics: \nweight: {}\nheight: {}", self.name, self.weight, self.height)
     }
 }
 
-// trait PersonTraits {
-//     fn think();
+// enum Type {
+//     Variant_1,
+//     Variant_2
 // }
-
-// impl PersonTraits for Person {
-//     fn think() {
-//         println!("thinking...");
-//     }
-// }
-
-// // Enumeration
-// enum Creature {
-//     Person,
-//     Animal,
-//     Plant
-// }
-
-// // Trait
-// trait BeingAlive {
-//     fn walk() {}
-//     fn eat() {}
-//     // ...
-// }
-
-// Person.weight;
-// Creature::Person;
